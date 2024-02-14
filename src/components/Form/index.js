@@ -8,7 +8,7 @@ const Form = (props) => {
     "Programação",
     "Front-End",
     "Data Science",
-    "Devops",
+    "Dev-ops",
     "UX e Design",
     "Mobile",
     "Inovação e Gestão",

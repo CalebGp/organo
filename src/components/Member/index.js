@@ -1,13 +1,16 @@
 import "./Member.css";
-const Member = () => {
+const Member = (props) => {
   return (
     <div className="member">
-      <div className="header">
-        <img src="https://github.com/calebgp.png" alt="Caleb Gomes" />
+      <div
+        className="header"
+        style={{ backgroundColor: props.backgroundColor }}
+      >
+        <img src={props.image} alt={props.image} />
       </div>
       <div className="bottom">
-        <h3>Caleb</h3>
-        <h4>Aluno</h4>
+        <h3>{props.name}</h3>
+        <h4>{props.role}</h4>
       </div>
     </div>
   );

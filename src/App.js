@@ -2,17 +2,9 @@ import { useState } from "react";
 import Banner from "./components/Banner";
 import Form from "./components/Form";
 import Team from "./components/Team";
+import Footer from "./components/Footer";
 
 function App() {
-  // const times2 = [
-  //   "Programação",
-  //   "Front-End",
-  //   "Data Science",
-  //   "Devops",
-  //   "UX e Design",
-  //   "Mobile",
-  //   "Inovação e Gestão",
-  // ];
   const teams = [
     {
       name: "Programação",
@@ -50,24 +42,25 @@ function App() {
       secundary: "#FFEEDF",
     },
   ];
-  const [collaborators, setCollaborators] = useState([]);
-  const onSubmit = (c) => {
-    console.log(c);
-    setCollaborators([...collaborators, c]);
-    console.log(collaborators);
+  const [members, setMembers] = useState([]);
+  const onSubmit = (m) => {
+    setMembers([...members, m]);
+    console.log(members);
   };
   return (
     <div className="App">
       <Banner />
-      <Form onSubmit={(c) => onSubmit(c)} />
+      <Form onSubmit={(m) => onSubmit(m)} />
       {teams.map((t) => (
         <Team
           key={t.name}
           name={t.name}
           primary={t.primary}
           secundary={t.secundary}
+          members={members.filter((m) => m.team === t.name)}
         />
       ))}
+      <Footer />
     </div>
   );
 }
